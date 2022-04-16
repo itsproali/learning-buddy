@@ -1,0 +1,31 @@
+[
+    {
+    "id": 1,
+    "img": "../src/images/math.jpg",
+    "title": "All About Mathematics",
+    "details": "These Things are available on this package",
+    "sub-1": "Mathematics",
+    "sub-2": "Hand Writing"
+    }, 
+    {
+    "id" : 2,
+    "img": "../src/images/math-english.jpg",
+    "title": "Master of English & Maths",
+    "details": "These Things are available on this package",
+    "sub-1": "Mathematics",
+    "sub-2": "English",
+    "sub-3": "Spoken English"
+    },
+    {
+    "id" : 3,
+    "img": "../src/images/math.jpg",
+    "title": "Ultimate all in one",
+    "details": "These Things are available on this package",
+    "sub-1": "Mathematics",
+    "sub-2": "English",
+    "sub-3": "Spoken English",
+    "sub-4": "Science", 
+    "sub-5": "Engineering",
+    "sub-6": "Spoken English"
+    }
+]
