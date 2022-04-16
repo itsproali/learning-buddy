@@ -1,0 +1,18 @@
+.navbar {
+    background-color: var(--blue);
+    color: white;
+}
+
+.nav-link {
+    display: block;
+    padding: .5rem;
+}
+
+.nav-link:hover {
+    color: orange;
+    transition: .3s;
+}
+
+.active {
+    color: orange;
+}

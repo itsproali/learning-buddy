@@ -1,3 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --blue: #1C345A;
+  --red-orange: to right, orangered, orange;
+  --orange-red: to right, orange orangered;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.parent {
+  width: 85%;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 600px) {
+  .parent {
+    width: 95%;
+  }
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
