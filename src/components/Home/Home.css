@@ -1,0 +1,27 @@
+.banner {
+    height: 90vh;
+    background-image: url("https://i.ibb.co/fFdZV2Y/banner.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.banner-text {
+    color: white;
+}
+
+.hire-btn {
+    background: linear-gradient(var(--red-orange));
+    margin: 40px auto;
+    padding: 8px 30px;
+    border-radius: 5px;
+    transition: .4s;
+}
+
+.hire-btn:hover {
+    background: linear-gradient(var(--blue), blueviolet);
+    background: linear-gradient(var(--orange-red));
+}

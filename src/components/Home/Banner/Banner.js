@@ -1,11 +1,18 @@
-import React from 'react';
+import React from "react";
 
 const Banner = () => {
-    return (
-        <div>
-            <h1 className='text-primary'>I am a banner</h1>
-        </div>
-    );
+  return (
+    <div className="banner">
+      <div className="banner-text">
+        <h1 className="text-6xl font-semibold">
+          The Best Tutor Focused
+          <br />
+          On Your Learning
+        </h1>
+        <button className="hire-btn">Hire Now</button>
+      </div>
+    </div>
+  );
 };
 
 export default Banner;
