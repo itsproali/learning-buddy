@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useSendPasswordResetEmail,
+  useSignInWithEmailAndPassword,
+} from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { auth } from "../../firebase-init";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
@@ -24,9 +27,20 @@ const Login = () => {
     signInWithEmailAndPassword(email, password);
   };
 
-  if (loading) {
+  const [sendPasswordResetEmail, sending, resetError] =
+    useSendPasswordResetEmail(auth);
+
+  if (loading || sending) {
     return <Spinner></Spinner>;
   }
+
+  const resetPassword = () => {
+    if (email) {
+      sendPasswordResetEmail(email);
+    } else {
+      return;
+    }
+  };
 
   if (user) {
     navigate(from, { replace: true });
@@ -53,9 +67,12 @@ const Login = () => {
         />
         <p className="text">
           Forgot Password ?{" "}
-          <button className="reset-password">Reset Password</button>
+          <button className="reset-password" onClick={resetPassword}>
+            Reset Password
+          </button>
         </p>
         {error && <p className="text-red-400">{error.message}</p>}
+        {resetError && <p className="text-red-400">{resetError.message}</p>}
         <input
           type="submit"
           className="btn cursor-pointer mt-3"

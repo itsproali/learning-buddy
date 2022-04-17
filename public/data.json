@@ -6,7 +6,7 @@
     "details": "These Things are available on this package",
     "first": "Mathematics",
     "second": "Hand Writing",
-    "price": "$ 50"
+    "price": "$ 200"
     }, 
     {
     "id" : 2,
@@ -16,7 +16,7 @@
     "first": "Mathematics",
     "second": "English",
     "third": "Spoken English",
-    "price": "$ 100"
+    "price": "$ 400"
     },
     {
     "id" : 3,
@@ -29,6 +29,6 @@
     "fourth": "Science", 
     "fifth": "Engineering",
     "sixth": "Spoken English",
-    "price": "$ 200"
+    "price": "$ 1000"
     }
 ]

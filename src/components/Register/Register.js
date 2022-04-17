@@ -16,7 +16,7 @@ const Register = () => {
   const navigate = useNavigate();
 
   const [createUserWithEmailAndPassword, user, loading, error] =
-    useCreateUserWithEmailAndPassword(auth);
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
   const [updateProfile, updating, updatingError] = useUpdateProfile(auth);
 
@@ -63,7 +63,9 @@ const Register = () => {
           placeholder="Choose a strong password"
         />
         {error && <p className="text-red-400">{error.message}</p>}
-        {updatingError && <p className="text-red-400">{error.message}</p>}
+        {updatingError && (
+          <p className="text-red-400">{updatingError.message}</p>
+        )}
         <input
           type="submit"
           className="btn cursor-pointer mt-3"
