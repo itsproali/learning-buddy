@@ -28,7 +28,7 @@ const About = () => {
             a great companion.
           </p>
           <a href="https://www.linkedin.com/in/itsproali/" target="_blank">
-            <button className="btn">Contact Me</button>
+            <button className="btn shadow-lg">Contact Me</button>
           </a>
         </div>
       </div>

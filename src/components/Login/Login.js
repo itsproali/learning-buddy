@@ -28,8 +28,11 @@ const Login = () => {
     signInWithEmailAndPassword(email, password);
   };
 
-  const [sendPasswordResetEmail, sending, resetError] =
-    useSendPasswordResetEmail(auth);
+  const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+
+  if (error) {
+    toast.error(`${error.message}`);
+  }
 
   if (loading || sending) {
     return <Spinner></Spinner>;
@@ -38,15 +41,15 @@ const Login = () => {
   const resetPassword = () => {
     if (email) {
       sendPasswordResetEmail(email);
-      toast.success("Password Reset Link sent To your email")
+      toast.success("Password Reset Link sent To your email");
     } else {
-      toast.error("Please Enter Your Email")
+      toast.error("Please Enter Your Email");
       return;
     }
   };
 
   if (user) {
-    toast.success("Login Completed Successfully")
+    toast.success("Login Completed Successfully");
     navigate(from, { replace: true });
   }
   return (
@@ -77,8 +80,6 @@ const Login = () => {
             Reset Password
           </button>
         </p>
-        {error && <p className="text-red-400">{error.message}</p>}
-        {resetError && <p className="text-red-400">{resetError.message}</p>}
         <input
           type="submit"
           className="btn cursor-pointer mt-3"
@@ -93,7 +94,7 @@ const Login = () => {
       </form>
 
       <SocialLogin></SocialLogin>
-      <Toaster/>
+      <Toaster />
     </div>
   );
 };

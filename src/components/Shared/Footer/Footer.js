@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="text-center mt-10 py-4">
         &copy; Copyright {year} | Designed and Developed by{" "}
         <a
-          className="text-yellow-500"
+          className="active"
           href="https://www.linkedin.com/in/itsproali/"
         >
           Mohammad Ali
