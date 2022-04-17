@@ -1,17 +1,27 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 import "../Login/Login-register.css";
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { auth } from "../../firebase-init";
 
 const Register = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  const [createUserWithEmailAndPassword, user, loading, error] =
+    useCreateUserWithEmailAndPassword(auth);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(name, email, password);
+    createUserWithEmailAndPassword(email, password);
   };
+
+  if (user) {
+    navigate("/");
+  }
 
   return (
     <div className="form-container">
