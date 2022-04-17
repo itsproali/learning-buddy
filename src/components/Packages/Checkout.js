@@ -26,6 +26,7 @@ const Checkout = () => {
           name="name"
           id="name"
           placeholder="Enter Your Name"
+          required
         />
         <input
           className="input-field"
@@ -35,6 +36,7 @@ const Checkout = () => {
           id="email"
           placeholder="Enter Your Email"
           readOnly
+          required
         />
         <input
           className="input-field"
@@ -42,6 +44,7 @@ const Checkout = () => {
           name="address"
           id="address"
           placeholder="Enter Your Address"
+          required
         />
         <input
           className="input-field"
@@ -49,6 +52,7 @@ const Checkout = () => {
           name="phone"
           id="phone"
           placeholder="Enter Your Phone Number"
+          required
         />
 
         <input

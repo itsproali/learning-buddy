@@ -4,6 +4,7 @@ import About from "./components/About/About";
 import Blog from "./components/Blog/Blog";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
+import NotFound from "./components/NotFound/NotFound";
 import Checkout from "./components/Packages/Checkout";
 import Packages from "./components/Packages/Packages";
 import Register from "./components/Register/Register";
@@ -30,6 +31,7 @@ function App() {
             </RequireAuth>
           }
         ></Route>
+        <Route path='*' element={<NotFound/>}></Route>
       </Routes>
       <Footer></Footer>
     </div>

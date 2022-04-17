@@ -1,0 +1,31 @@
+.not-found-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    flex-wrap: wrap;
+    height: 74vh;
+}
+
+.not-found-image img {
+    max-width: 100%;
+}
+
+.not-found-text h1 {
+    color: orange;
+    font-size: 6rem;
+    font-weight: 500;
+}
+
+.not-found-text h2 {
+    color: var(--blue);
+    font-size: 3rem;
+    font-weight: 500;
+    margin: 0 0 10px 0;
+}
+
+@media only screen and (max-width: 600px) {
+    .not-found-container {
+        grid-template-columns: repeat(1, 1fr);
+        height: auto;
+    }
+}

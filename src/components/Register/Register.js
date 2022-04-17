@@ -53,6 +53,7 @@ const Register = () => {
           id="email"
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Enter Your Email"
+          required
         />
         <input
           className="input-field"
@@ -61,6 +62,7 @@ const Register = () => {
           id="password"
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Choose a strong password"
+          required
         />
         {error && <p className="text-red-400">{error.message}</p>}
         {updatingError && (
