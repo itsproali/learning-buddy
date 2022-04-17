@@ -9,7 +9,7 @@ const Header = () => {
       <nav className="navbar flex justify-center sticky top-0 md:items-center p-3 md:px-16 flex-col w-full md:flex-row z-10 shadow-lg">
         <div className="flex w-full items-center">
           <Link to="/">
-            <h1 className="text-2xl">Learning Buddy</h1>
+            <h1 className="text-2xl brand-title">Learning Buddy</h1>
           </Link>
           <div
             onClick={() => setOpen(!open)}
@@ -49,8 +49,8 @@ const Header = () => {
             open ? "block" : "hidden"
           }`}
         >
-          <NavLink to="/services" className="nav-link md:mx-2">
-            Services
+          <NavLink to="/packages" className="nav-link md:mx-2">
+            Packages
           </NavLink>
 
           <NavLink to="/blog" className="nav-link md:mx-2">

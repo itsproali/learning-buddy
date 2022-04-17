@@ -1,0 +1,42 @@
+.packages-title {
+    color: var(--blue);
+    font-size: 3rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 15px 0;
+}
+
+.item-container {
+    padding: 1rem;
+    border-radius: .25rem;
+    box-shadow: 3px 3px 10px 1px lightgray;
+    position: relative;
+}
+
+.item-image img {
+    height: 100%;
+    width: 100%;
+}
+
+.price {
+    color: white;
+    background-color: orange;
+    padding: 10px 20px ;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    box-shadow: -2px 1px 5px 1px rgb(76, 75, 75);
+    position: absolute;
+    top: 20px;
+    left: -10px;
+    z-index: 5;
+}
+
+.sub-list {
+    color: var(--blue);
+}
+.enroll-btn {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+}

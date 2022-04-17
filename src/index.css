@@ -6,8 +6,6 @@
 
 :root {
   --blue: #1C345A;
-  --red-orange: to right, orangered, orange;
-  --orange-red: to right, orange, orangered;
 }
 
 @tailwind base;

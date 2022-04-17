@@ -1,31 +1,34 @@
 [
     {
     "id": 1,
-    "img": "../src/images/math.jpg",
+    "img": "https://i.ibb.co/qdjvbJG/math.jpg",
     "title": "All About Mathematics",
     "details": "These Things are available on this package",
-    "sub-1": "Mathematics",
-    "sub-2": "Hand Writing"
+    "first": "Mathematics",
+    "second": "Hand Writing",
+    "price": "$ 50"
     }, 
     {
     "id" : 2,
-    "img": "../src/images/math-english.jpg",
+    "img": "https://i.ibb.co/vv7xtMq/math-english.jpg",
     "title": "Master of English & Maths",
     "details": "These Things are available on this package",
-    "sub-1": "Mathematics",
-    "sub-2": "English",
-    "sub-3": "Spoken English"
+    "first": "Mathematics",
+    "second": "English",
+    "third": "Spoken English",
+    "price": "$ 100"
     },
     {
     "id" : 3,
-    "img": "../src/images/math.jpg",
+    "img": "https://i.ibb.co/WKN91KM/all-sub.jpg",
     "title": "Ultimate all in one",
     "details": "These Things are available on this package",
-    "sub-1": "Mathematics",
-    "sub-2": "English",
-    "sub-3": "Spoken English",
-    "sub-4": "Science", 
-    "sub-5": "Engineering",
-    "sub-6": "Spoken English"
+    "first": "Mathematics",
+    "second": "English",
+    "third": "Spoken English",
+    "fourth": "Science", 
+    "fifth": "Engineering",
+    "sixth": "Spoken English",
+    "price": "$ 200"
     }
 ]

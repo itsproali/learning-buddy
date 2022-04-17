@@ -13,6 +13,7 @@
     transition: .3s;
 }
 
-.active {
+.active,
+.brand-title {
     color: orange;
 }
