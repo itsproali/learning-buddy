@@ -8,7 +8,6 @@ import Packages from "./components/Packages/Packages";
 import Register from "./components/Register/Register";
 import Footer from "./components/Shared/Footer/Footer";
 import Header from "./components/Shared/Header/Header";
-import Spinner from "./components/Shared/Spinner/Spinner";
 
 function App() {
   return (
@@ -21,7 +20,6 @@ function App() {
         <Route path="/about" element={<About />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/register" element={<Register />}></Route>
-        <Route path='/loading' element={<Spinner/>}></Route>
       </Routes>
       <Footer></Footer>
     </div>

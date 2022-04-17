@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 import "../Login/Login-register.css";
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useCreateUserWithEmailAndPassword,
+  useUpdateProfile,
+} from "react-firebase-hooks/auth";
 import { auth } from "../../firebase-init";
 import Spinner from "../Shared/Spinner/Spinner";
 
@@ -15,12 +18,15 @@ const Register = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
 
-  const handleSubmit = (e) => {
+  const [updateProfile, updating, updatingError] = useUpdateProfile(auth);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    createUserWithEmailAndPassword(email, password);
+    await createUserWithEmailAndPassword(email, password);
+    await updateProfile({ displayName: name });
   };
 
-  if (loading) {
+  if (loading || updating) {
     return <Spinner></Spinner>;
   }
 
@@ -57,6 +63,7 @@ const Register = () => {
           placeholder="Choose a strong password"
         />
         {error && <p className="text-red-400">{error.message}</p>}
+        {updatingError && <p className="text-red-400">{error.message}</p>}
         <input
           type="submit"
           className="btn cursor-pointer mt-3"

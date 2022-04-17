@@ -1,13 +1,19 @@
 import { signOut } from "firebase/auth";
 import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { auth } from "../../../firebase-init";
 import "./Header.css";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
   const [user] = useAuthState(auth);
+  const navigate = useNavigate();
+
+  const handleSignOut = () => {
+    signOut(auth);
+    navigate("/");
+  };
 
   return (
     <div>
@@ -65,7 +71,7 @@ const Header = () => {
             About
           </NavLink>
           {user ? (
-            <button className="orange-btn" onClick={() => signOut(auth)}>
+            <button className="orange-btn" onClick={handleSignOut}>
               Log Out
             </button>
           ) : (
