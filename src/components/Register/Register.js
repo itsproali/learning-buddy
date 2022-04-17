@@ -1,21 +1,30 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
-import "./Login-register.css";
+import "../Login/Login-register.css";
 
-const Login = () => {
+const Register = () => {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(email, password);
+    console.log(name, email, password);
   };
 
   return (
     <div className="form-container">
-      <h1 className="text-center text-2xl font-semibold my-4 ">Login</h1>
+      <h1 className="text-center text-2xl font-semibold my-4 ">Register</h1>
       <form onSubmit={handleSubmit}>
+        <input
+          className="input-field"
+          type="text"
+          name="name"
+          id="name"
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Enter Your Name"
+        />
         <input
           className="input-field"
           type="email"
@@ -32,19 +41,15 @@ const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Choose a strong password"
         />
-        <p className="text">
-          Forgot Password ?{" "}
-          <button className="reset-password">Reset Password</button>
-        </p>
         <input
           type="submit"
           className="btn cursor-pointer mt-3"
-          value="Login"
+          value="Register"
         />
         <p className="text-center mt-2">
-          Don't have an account ?{" "}
-          <Link to="/register" className="toogle-sign-in">
-            Register Now
+          Already have an account ?{" "}
+          <Link to="/login" className="toogle-sign-in">
+            Login Now
           </Link>
         </p>
       </form>
@@ -54,4 +59,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

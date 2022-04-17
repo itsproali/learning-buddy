@@ -5,6 +5,7 @@ import Blog from "./components/Blog/Blog";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
 import Packages from "./components/Packages/Packages";
+import Register from "./components/Register/Register";
 import Footer from "./components/Shared/Footer/Footer";
 import Header from "./components/Shared/Header/Header";
 
@@ -18,6 +19,7 @@ function App() {
         <Route path="/blog" element={<Blog />}></Route>
         <Route path="/about" element={<About />}></Route>
         <Route path="/login" element={<Login />}></Route>
+        <Route path="/register" element={<Register />}></Route>
       </Routes>
       <Footer></Footer>
     </div>
