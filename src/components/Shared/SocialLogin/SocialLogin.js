@@ -1,12 +1,14 @@
 import React from "react";
 import { useSignInWithGoogle } from "react-firebase-hooks/auth";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { auth } from "../../../firebase-init";
 import Spinner from "../Spinner/Spinner";
 import "./SocialLogin.css";
 
 const SocialLogin = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location?.state?.from?.pathname || "/";
 
   const [signInWithGoogle, user, googleLoading, googleError] =
     useSignInWithGoogle(auth);
@@ -20,7 +22,7 @@ const SocialLogin = () => {
   }
 
   if (user) {
-    navigate("/");
+    navigate(from, { replace: true });
   }
 
   return (

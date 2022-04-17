@@ -33,7 +33,7 @@ const Package = ({ item }) => {
           {fifth && <li className="sub-list">{fifth}</li>}
           {sixth && <li className="sub-list">{sixth}</li>}
         </ul>
-        <Link to="/">
+        <Link to="/checkout">
           <button className="orange-btn enroll-btn">Enroll Now</button>
         </Link>
       </div>
