@@ -45,7 +45,7 @@ const Header = () => {
           </div>
         </div>
         <div
-          className={`navbar text-center  md:ml-auto shadow-lg md:shadow-none absolute top-12 z-10 md:flex md:items-center md:top-0 left-0 w-full md:w-1/3 md:static ${
+          className={`navbar text-center  md:ml-auto shadow-lg md:shadow-none absolute top-12 z-10 md:flex md:items-center md:top-0 left-0 w-full md:w-1/2 md:static ${
             open ? "block" : "hidden"
           }`}
         >

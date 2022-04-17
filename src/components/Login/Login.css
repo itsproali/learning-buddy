@@ -1,0 +1,35 @@
+.form-container {
+    padding: 15px;
+    border: 2px solid orange;
+    border-radius: 7px;
+    width: 35%;
+    margin: 40px auto;
+}
+
+.input-field {
+    width: 100%;
+    border: 1px solid var(--blue);
+    border-radius: 5px;
+    padding: 7px;
+    margin: 10px 0;
+}
+.input-field:focus {
+    border: 1px solid orange;
+    outline: none;
+}
+
+.reset-password, .toogle-sign-in {
+    text-decoration: underline;
+    color: orange;
+}
+
+@media only screen and (max-width: 1000px) {
+    .form-container {
+        width: 60%;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .form-container {
+        width: 90%;
+    }
+}
