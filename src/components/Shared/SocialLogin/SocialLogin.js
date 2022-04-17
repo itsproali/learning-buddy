@@ -1,5 +1,6 @@
 import React from "react";
 import { useSignInWithGoogle } from "react-firebase-hooks/auth";
+import toast, { Toaster } from "react-hot-toast";
 import { useLocation, useNavigate } from "react-router-dom";
 import { auth } from "../../../firebase-init";
 import Spinner from "../Spinner/Spinner";
@@ -22,6 +23,7 @@ const SocialLogin = () => {
   }
 
   if (user) {
+    toast.success("Logged In Successfully")
     navigate(from, { replace: true });
   }
 
@@ -38,6 +40,7 @@ const SocialLogin = () => {
         <img src="https://i.ibb.co/gRLDw5G/google-logo.png" alt="google-logo" />
         <p>Continue with Google</p>
       </button>
+      <Toaster/>
     </div>
   );
 };

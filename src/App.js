@@ -21,8 +21,6 @@ function App() {
         <Route path="/packages" element={<Packages />}></Route>
         <Route path="/blog" element={<Blog />}></Route>
         <Route path="/about" element={<About />}></Route>
-        <Route path="/login" element={<Login />}></Route>
-        <Route path="/register" element={<Register />}></Route>
         <Route
           path="/checkout"
           element={
@@ -31,7 +29,9 @@ function App() {
             </RequireAuth>
           }
         ></Route>
-        <Route path='*' element={<NotFound/>}></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/register" element={<Register />}></Route>
+        <Route path="*" element={<NotFound />}></Route>
       </Routes>
       <Footer></Footer>
     </div>

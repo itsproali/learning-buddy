@@ -3,6 +3,7 @@ import {
   useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
 } from "react-firebase-hooks/auth";
+import toast, { Toaster } from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { auth } from "../../firebase-init";
 import SocialLogin from "../Shared/SocialLogin/SocialLogin";
@@ -37,12 +38,15 @@ const Login = () => {
   const resetPassword = () => {
     if (email) {
       sendPasswordResetEmail(email);
+      toast.success("Password Reset Link sent To your email")
     } else {
+      toast.error("Please Enter Your Email")
       return;
     }
   };
 
   if (user) {
+    toast.success("Login Completed Successfully")
     navigate(from, { replace: true });
   }
   return (
@@ -89,6 +93,7 @@ const Login = () => {
       </form>
 
       <SocialLogin></SocialLogin>
+      <Toaster/>
     </div>
   );
 };

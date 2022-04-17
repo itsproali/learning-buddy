@@ -1,6 +1,7 @@
 import { signOut } from "firebase/auth";
 import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import toast, { Toaster } from "react-hot-toast";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { auth } from "../../../firebase-init";
 import "./Header.css";
@@ -12,6 +13,7 @@ const Header = () => {
 
   const handleSignOut = () => {
     signOut(auth);
+    toast.success("Successfully Logged Out")
     navigate("/");
   };
 
@@ -81,6 +83,7 @@ const Header = () => {
           )}
         </div>
       </nav>
+      <Toaster/>
     </div>
   );
 };

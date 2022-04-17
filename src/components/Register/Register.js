@@ -8,6 +8,7 @@ import {
 } from "react-firebase-hooks/auth";
 import { auth } from "../../firebase-init";
 import Spinner from "../Shared/Spinner/Spinner";
+import toast, { Toaster } from "react-hot-toast";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -23,14 +24,23 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await createUserWithEmailAndPassword(email, password);
-    await updateProfile({ displayName: name });
+    if (user) {
+      await updateProfile({ displayName: name });
+    }
   };
+
+  if (error) {
+    toast.error(`${error.message}`);
+  } else if (updatingError) {
+    toast.error(`${updatingError.message}`);
+  }
 
   if (loading || updating) {
     return <Spinner></Spinner>;
   }
 
   if (user) {
+    toast.success("Verification Email Sent");
     navigate("/");
   }
 
@@ -43,7 +53,7 @@ const Register = () => {
           type="text"
           name="name"
           id="name"
-          onChange={(e) => setName(e.target.value)}
+          onBlur={(e) => setName(e.target.value)}
           placeholder="Enter Your Name"
         />
         <input
@@ -51,7 +61,7 @@ const Register = () => {
           type="email"
           name="email"
           id="email"
-          onChange={(e) => setEmail(e.target.value)}
+          onBlur={(e) => setEmail(e.target.value)}
           placeholder="Enter Your Email"
           required
         />
@@ -60,14 +70,14 @@ const Register = () => {
           type="password"
           name="password"
           id="password"
-          onChange={(e) => setPassword(e.target.value)}
+          onBlur={(e) => setPassword(e.target.value)}
           placeholder="Choose a strong password"
           required
         />
-        {error && <p className="text-red-400">{error.message}</p>}
-        {updatingError && (
+        {/* {error && <p className="text-red-400">{error.message}</p>} */}
+        {/* {updatingError && (
           <p className="text-red-400">{updatingError.message}</p>
-        )}
+        )} */}
         <input
           type="submit"
           className="btn cursor-pointer mt-3"
@@ -82,6 +92,7 @@ const Register = () => {
       </form>
 
       <SocialLogin></SocialLogin>
+      <Toaster />
     </div>
   );
 };
