@@ -1,5 +1,6 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import toast, { Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../../firebase-init";
 import Spinner from "../Shared/Spinner/Spinner";
@@ -13,6 +14,7 @@ const Checkout = () => {
   }
   const handleCheckOut = (e) => {
     e.preventDefault();
+    toast.success("Thank you for Check Out")
     navigate("/");
   };
   return (
@@ -61,6 +63,7 @@ const Checkout = () => {
           value="Proceed Checkout"
         />
       </form>
+      <Toaster/>
     </div>
   );
 };
