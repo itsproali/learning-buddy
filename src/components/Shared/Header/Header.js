@@ -1,9 +1,14 @@
+import { signOut } from "firebase/auth";
 import React, { useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, NavLink } from "react-router-dom";
+import { auth } from "../../../firebase-init";
 import "./Header.css";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const [user] = useAuthState(auth);
+
   return (
     <div>
       <nav className="navbar flex justify-center sticky top-0 md:items-center p-3 md:px-16 flex-col w-full md:flex-row z-10 shadow-lg">
@@ -59,9 +64,15 @@ const Header = () => {
           <NavLink to="/about" className="nav-link md:mx-2">
             About
           </NavLink>
-          <NavLink to="/login" className="nav-link md:mx-2">
-            LogIn
-          </NavLink>
+          {user ? (
+            <button className="orange-btn" onClick={() => signOut(auth)}>
+              Log Out
+            </button>
+          ) : (
+            <NavLink to="/login" className="nav-link md:mx-2">
+              LogIn
+            </NavLink>
+          )}
         </div>
       </nav>
     </div>

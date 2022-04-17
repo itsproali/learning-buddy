@@ -4,6 +4,7 @@ import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 import "../Login/Login-register.css";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { auth } from "../../firebase-init";
+import Spinner from "../Shared/Spinner/Spinner";
 
 const Register = () => {
   const [name, setName] = useState("");
@@ -18,6 +19,10 @@ const Register = () => {
     e.preventDefault();
     createUserWithEmailAndPassword(email, password);
   };
+
+  if (loading) {
+    return <Spinner></Spinner>;
+  }
 
   if (user) {
     navigate("/");
@@ -51,6 +56,7 @@ const Register = () => {
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Choose a strong password"
         />
+        {error && <p className="text-red-400">{error.message}</p>}
         <input
           type="submit"
           className="btn cursor-pointer mt-3"
