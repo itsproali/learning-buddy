@@ -4,7 +4,8 @@
     background-color: gray;
 }
 
-.social-login-group {
+.google-login-group,
+.facebook-login-group {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -14,15 +15,21 @@
     padding: 10px;
     cursor: pointer;
     transition: .3s;
+    margin: 10px 0;
 }
 
-.social-login-group:hover {
-    color: orange;
-    border: 1px solid orange;
-
+.google-login-group:hover {
+    color: green;
+    border: 1px solid green;
 }
 
-.social-login-group img {
+.facebook-login-group:hover {
+    color: blue;
+    border: 1px solid blue;
+}
+
+.google-login-group img,
+.facebook-login-group img {
     width: 25px;
     margin-right: 10px;
 }

@@ -74,10 +74,6 @@ const Register = () => {
           placeholder="Choose a strong password"
           required
         />
-        {/* {error && <p className="text-red-400">{error.message}</p>} */}
-        {/* {updatingError && (
-          <p className="text-red-400">{updatingError.message}</p>
-        )} */}
         <input
           type="submit"
           className="btn cursor-pointer mt-3"
